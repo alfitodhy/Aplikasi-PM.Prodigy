@@ -1,0 +1,234 @@
+/* Telegram Sticky Chat Button Widget */
+
+:root {
+  --warna-background: #4dc247;
+
+  --warna-bg-chat: #f0f5fb;
+
+  --warna-icon: #fff;
+
+  --warna-text: #505050;
+
+  --warna-text-alt: #989b9f;
+
+  --lebar-chatbox: 320px;
+}
+
+.sticky-button {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  position: fixed;
+
+  right: 20px;
+
+  bottom: 76px;
+
+  width: 45px;
+
+  height: 45px;
+
+  border: 2px solid #0091ea;
+
+  background-color: #fefefe;
+
+  border-radius: 50%;
+
+  box-shadow: 1px 1px 5px 5px #0091ea;
+}
+
+.sticky-button a,
+.sticky-button label {
+  display: flex;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.sticky-button a svg,
+.sticky-button label svg {
+  margin: auto;
+  fill: #0091ea;
+}
+
+.sticky-button label svg.svg-2 {
+  display: none;
+}
+
+.sticky-chat {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  width: 70%;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+
+  z-index: 21;
+  opacity: 0;
+  visibility: hidden;
+  line-height: normal;
+}
+
+.sticky-chat .chat-content {
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.sticky-chat .chat-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #0091ea;
+  overflow: hidden;
+}
+
+.sticky-chat .chat-header:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70px;
+  height: 65px;
+  background: rgba(0, 0, 4, 0);
+  border-radius: 70px 0 5px 0;
+}
+
+.sticky-chat .chat-header svg {
+  width: 35px;
+  height: 35px;
+  flex: 0 0 auto;
+  fill: var(--warna-icon);
+}
+
+.sticky-chat .chat-header .title {
+  padding-left: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  color: var(--warna-icon);
+}
+
+.sticky-chat .chat-header .title span {
+  font-size: 11px;
+  font-weight: 400;
+  display: block;
+  line-height: 1.58em;
+  margin: 0;
+}
+
+.sticky-chat .chat-text {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 25px 20px;
+  font-size: 12px;
+  color: var(--warna-text);
+}
+
+.sticky-chat .chat-text span {
+  display: inline-block;
+  margin-right: auto;
+  padding: 10px 10px 10px 20px;
+  background-color: var(--warna-bg-chat);
+  border-radius: 3px 15px 15px;
+}
+
+.sticky-chat .chat-text span:after {
+  content: "Just now";
+  display: inline-block;
+  position: relative;
+  bottom: -5px;
+  left: -4px;
+  margin-left: 2px;
+  font-size: 9px;
+  color: var(--warna-text-alt);
+}
+
+.sticky-chat .chat-text span.typing {
+  margin: 15px 0 0 auto;
+  padding: 10px 20px 10px 10px;
+  border-radius: 15px 3px 15px 15px;
+}
+
+.sticky-chat .chat-text span.typing:after,
+.chat-menu {
+  display: none;
+}
+
+.sticky-chat .chat-text span.typing svg {
+  height: 14px;
+  fill: var(--warna-text-alt);
+}
+
+.sticky-chat .chat-button {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  font-size: 12px;
+  color: var(--warna-text);
+}
+
+.sticky-chat .chat-button svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--warna-text-alt);
+  margin-left: auto;
+  transform: rotate(40deg);
+  -webkit-transform: rotate(40deg);
+}
+
+.chat-menu:checked + .sticky-button label {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.chat-menu:checked + .sticky-button label svg.svg-1 {
+  display: none;
+}
+
+.chat-menu:checked + .sticky-button label svg.svg-2 {
+  display: table-cell;
+}
+
+.chat-menu:checked + .sticky-button + .sticky-chat {
+  bottom: 77px;
+
+  right: 81px;
+
+  opacity: 1;
+
+  visibility: visible;
+}
+
+.schat {
+  outline: none;
+  position: absolute;
+  bottom: 12px;
+  left: 15px;
+  border: none;
+  color: #0091ea;
+  font-weight: bold;
+}
+
+.blink_me {
+  animation: blinker 1.3s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}

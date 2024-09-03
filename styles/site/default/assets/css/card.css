@@ -1,0 +1,83 @@
+/* Value Slider */
+.values-slider .value {
+  box-sizing: border-box;
+  background: #fff;
+  background-size: 100%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 14px;
+  color: #666;
+  max-width: 350px;
+  min-height: 230px;
+}
+
+.values-slider .value .head h3 {
+  display: inline-block;
+  font: bold 24px "open sans";
+  position: relative;
+  top: -20px;
+}
+
+.values-slider .value .head .line {
+  display: inline-block;
+  width: 40px;
+  height: 1px;
+  background: #eacfb1;
+  margin: 0 15px;
+  position: relative;
+  top: -25px;
+}
+
+.values-slider .value .head .value-icon {
+  display: inline-block;
+  width: 55px;
+  height: auto;
+}
+
+.values-slider .value .head .value-icon svg {
+  width: 100%;
+  height: auto;
+}
+
+.values-slider .value .value-text {
+  font: 12px quicksand;
+  line-height: 20px;
+  margin-top: 10px;
+}
+
+.values-slider .owl-item .item {
+  filter: blur(3px);
+  transform: scale(0.75);
+  transition: all 0.5s;
+}
+
+.values-slider .owl-item.active.center .item {
+  filter: blur(0);
+  transform: scale(1);
+  transition: all 0.5s;
+}
+
+.values-slider .owl-nav {
+  position: absolute;
+  top: 35%;
+  width: 100%;
+}
+
+.values-slider .owl-nav .owl-prev {
+  float: left;
+}
+
+.values-slider .owl-nav .owl-prev span,
+.values-slider .owl-nav .owl-next span {
+  color: #666;
+  font-size: 48px;
+  border-radius: 100%;
+  width: 65px;
+  height: 65px;
+  line-height: 65px;
+  text-align: center;
+}
+
+.values-slider .owl-nav .owl-next {
+  float: right;
+}
